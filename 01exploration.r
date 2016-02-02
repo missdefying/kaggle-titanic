@@ -34,7 +34,7 @@ dbWriteTable(con, "titanic", train, row.names=FALSE)
 #query data from database--one variable @ a time
 #fetch = put results in data frame; -1=fetch all results
 #make sure you use double quotes since the table will be created with double quotes for col names
-train <- fetch(dbSendQuery(con, 'SELECT * from titanic'), n=100)
+train <- fetch(dbSendQuery(con, 'SELECT * from titanic'), n=-1)
 
 #make R treat age as numeric and survived as a factor (it can't be a numeric range)
 train$Age <- as.numeric(train$Age)
