@@ -14,8 +14,8 @@ con <- dbConnect(drv, host=dbhost, port=dbport, dbname=dbname, user=dbuser, pass
 setwd("~/Dropbox/Kaggle/titanic")
 
 #Import files & set file vars
-train <- read.csv("~/Dropbox/Kaggle/titanic/train.csv")
-test <- read.csv("~/Dropbox/Kaggle/titanic/test.csv")
+train <- read.csv("train.csv")
+test <- read.csv("test.csv")
 
 ## Add survived column to test set with value of 0--in order to combine test & train data must match
 test$Survived <- rep(0, 418)
