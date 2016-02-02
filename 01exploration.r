@@ -31,9 +31,8 @@ dbWriteTable(con, "titanic", train, row.names=FALSE)
 ## fetch = put results in data frame; -1=fetch all results
 ## make sure you use double quotes since the table will be created with double quotes for col names
 train <- fetch(dbSendQuery(con, 'SELECT * from titanic'), n=-1)
-train$Age <- as.numeric(train$Age)
-train$Survived <- as.factor(train$Survived)
 
+## start exploring!
 age <- table(train$Survived, train$Age)
 barplot(age, xlab="Passenger Age", col=c("red","green"), legend = rownames(age))
 
